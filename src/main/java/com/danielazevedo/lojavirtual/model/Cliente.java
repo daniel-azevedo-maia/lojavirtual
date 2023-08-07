@@ -1,4 +1,4 @@
-package com.danielazevedo.lojavirtual.model.cliente;
+package com.danielazevedo.lojavirtual.model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -6,10 +6,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.sql.Date;
 import java.time.LocalDateTime;
+import java.util.Date;
+
 
 @Entity
 @Data

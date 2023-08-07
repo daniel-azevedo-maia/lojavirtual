@@ -1,7 +1,7 @@
 package com.danielazevedo.lojavirtual.controlller;
 
 
-import com.danielazevedo.lojavirtual.model.cliente.Cliente;
+import com.danielazevedo.lojavirtual.model.Cliente;
 import com.danielazevedo.lojavirtual.service.ClienteService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
