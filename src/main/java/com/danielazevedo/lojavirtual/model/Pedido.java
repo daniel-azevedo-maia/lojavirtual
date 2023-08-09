@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,12 +18,11 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
+    @OneToOne
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
     @OneToMany
-    private List<ItemPedido> itensPedido;
-
+    private List<ItemPedido> itens = new ArrayList<>();
 
 }

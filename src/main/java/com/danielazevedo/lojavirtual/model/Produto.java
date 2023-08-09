@@ -1,6 +1,5 @@
 package com.danielazevedo.lojavirtual.model;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

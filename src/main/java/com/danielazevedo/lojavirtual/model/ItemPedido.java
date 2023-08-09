@@ -1,9 +1,7 @@
 package com.danielazevedo.lojavirtual.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
@@ -15,15 +13,15 @@ public class ItemPedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private Pedido pedido;
+    private int quantidade;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "produto_id")
     private Produto produto;
 
-    private int quantidade;
+    @ManyToOne
+    @JoinColumn(name = "id_pedido")
+    private Pedido pedido;
 
 
 }
