@@ -1,9 +1,0 @@
-Itens a se fazer:
-
-1) Adicionar o método PATCH (usando ObjectModel) em ProdutoController e ClienteController.
-
-2) Completar as request collections no Postman.
-
-3) Modelar a entidade Pedido e ItemPedido: atentar às particularidades de restrição de integridade!
-
-4) Acompanhar o curso da AlgaWorks.
