@@ -1,6 +1,6 @@
-package com.danielazevedo.lojavirtual.repository;
+package com.danielazevedo.lojavirtual.domain.repository;
 
-import com.danielazevedo.lojavirtual.model.Produto;
+import com.danielazevedo.lojavirtual.domain.model.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

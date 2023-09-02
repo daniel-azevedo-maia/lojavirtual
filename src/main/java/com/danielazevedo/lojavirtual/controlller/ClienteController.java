@@ -1,8 +1,8 @@
 package com.danielazevedo.lojavirtual.controlller;
 
 
-import com.danielazevedo.lojavirtual.model.Cliente;
-import com.danielazevedo.lojavirtual.service.ClienteService;
+import com.danielazevedo.lojavirtual.domain.model.Cliente;
+import com.danielazevedo.lojavirtual.domain.service.ClienteService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,6 +44,20 @@ public class ClienteController {
     public ResponseEntity<Cliente> cadastrar(@RequestBody Cliente cliente) {
 
         cliente.setDataCadastro(LocalDateTime.now());
+
+        System.out.println(cliente.getId());
+        System.out.println(cliente.getRg());
+        System.out.println(cliente.getCpf());
+        System.out.println(cliente.getNome());
+        System.out.println(cliente.getSobrenome());
+        System.out.println(cliente.getEndereco().getLogradouro());
+        System.out.println(cliente.getEndereco().getBairro());
+        System.out.println(cliente.getEndereco().getNumero());
+        System.out.println(cliente.getEndereco().getCidade().getNome());
+        System.out.println(cliente.getEndereco().getCidade().getEstado().getNome());
+        System.out.println(cliente.getDataCadastro());
+        System.out.println(cliente.getDataNascimento());
+
 
         Cliente clienteSalvo = clienteService.cadastrar(cliente);
 

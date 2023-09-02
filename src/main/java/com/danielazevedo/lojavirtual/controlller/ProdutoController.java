@@ -1,14 +1,13 @@
 package com.danielazevedo.lojavirtual.controlller;
 
 
-import com.danielazevedo.lojavirtual.model.Produto;
-import com.danielazevedo.lojavirtual.service.ProdutoService;
+import com.danielazevedo.lojavirtual.domain.model.Produto;
+import com.danielazevedo.lojavirtual.domain.service.ProdutoService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 

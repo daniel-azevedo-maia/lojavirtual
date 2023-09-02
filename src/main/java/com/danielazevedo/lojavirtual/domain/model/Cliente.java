@@ -1,12 +1,13 @@
-package com.danielazevedo.lojavirtual.model;
+package com.danielazevedo.lojavirtual.domain.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Data
@@ -30,11 +31,15 @@ public class Cliente {
     @Column(nullable = false)
     private String cpf;
 
+    @Embedded
+    private Endereco endereco;
+
     @Column(nullable = false, name = "datanascimento")
-    private Date dataNascimento;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dataNascimento;
 
     @Column(name = "datacadastro")
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime dataCadastro;
 
 }

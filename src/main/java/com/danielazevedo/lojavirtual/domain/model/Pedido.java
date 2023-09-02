@@ -1,4 +1,4 @@
-package com.danielazevedo.lojavirtual.model;
+package com.danielazevedo.lojavirtual.domain.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,11 +18,11 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "id_cliente")
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    @OneToMany
+    @OneToMany(mappedBy = "pedido")
     private List<ItemPedido> itens = new ArrayList<>();
 
 }

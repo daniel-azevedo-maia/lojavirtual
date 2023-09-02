@@ -1,17 +1,15 @@
-package com.danielazevedo.lojavirtual.model;
+package com.danielazevedo.lojavirtual.domain.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Produto {
+public class Estado {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,9 +17,5 @@ public class Produto {
 
     @Column(nullable = false)
     private String nome;
-
-    @Column(nullable = false)
-    private BigDecimal preco;
-
 
 }

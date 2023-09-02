@@ -1,4 +1,4 @@
-package com.danielazevedo.lojavirtual.model;
+package com.danielazevedo.lojavirtual.domain.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -20,8 +20,7 @@ public class ItemPedido {
     private Produto produto;
 
     @ManyToOne
-    @JoinColumn(name = "id_pedido")
+    @JoinColumn(name = "pedido_id")
     private Pedido pedido;
-
 
 }

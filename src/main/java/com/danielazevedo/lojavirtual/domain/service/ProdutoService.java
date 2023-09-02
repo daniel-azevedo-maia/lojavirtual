@@ -1,7 +1,7 @@
-package com.danielazevedo.lojavirtual.service;
+package com.danielazevedo.lojavirtual.domain.service;
 
-import com.danielazevedo.lojavirtual.model.Produto;
-import com.danielazevedo.lojavirtual.repository.ProdutoRepository;
+import com.danielazevedo.lojavirtual.domain.model.Produto;
+import com.danielazevedo.lojavirtual.domain.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
