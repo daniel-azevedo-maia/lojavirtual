@@ -45,20 +45,6 @@ public class ClienteController {
 
         cliente.setDataCadastro(LocalDateTime.now());
 
-        System.out.println(cliente.getId());
-        System.out.println(cliente.getRg());
-        System.out.println(cliente.getCpf());
-        System.out.println(cliente.getNome());
-        System.out.println(cliente.getSobrenome());
-        System.out.println(cliente.getEndereco().getLogradouro());
-        System.out.println(cliente.getEndereco().getBairro());
-        System.out.println(cliente.getEndereco().getNumero());
-        System.out.println(cliente.getEndereco().getCidade().getNome());
-        System.out.println(cliente.getEndereco().getCidade().getEstado().getNome());
-        System.out.println(cliente.getDataCadastro());
-        System.out.println(cliente.getDataNascimento());
-
-
         Cliente clienteSalvo = clienteService.cadastrar(cliente);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(clienteSalvo);

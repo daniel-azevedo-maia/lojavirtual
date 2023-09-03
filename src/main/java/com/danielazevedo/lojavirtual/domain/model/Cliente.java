@@ -8,6 +8,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -31,8 +33,8 @@ public class Cliente {
     @Column(nullable = false)
     private String cpf;
 
-    @Embedded
-    private Endereco endereco;
+    @OneToMany(mappedBy = "cliente")
+    private List<Endereco> endereco = new ArrayList<>();
 
     @Column(nullable = false, name = "datanascimento")
     @JsonFormat(pattern = "yyyy-MM-dd")
