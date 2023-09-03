@@ -1,33 +1,20 @@
-    package com.danielazevedo.lojavirtual.domain.model;
-    import jakarta.persistence.*;
-    import lombok.AllArgsConstructor;
-    import lombok.Data;
-    import lombok.NoArgsConstructor;
+package com.danielazevedo.lojavirtual.domain.model;
 
-    @Entity
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public class Endereco {
+import jakarta.persistence.*;
+import lombok.Data;
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+@Data
+@Embeddable
+public class Endereco {
 
-        private String logradouro;
+    private String logradouro;
+    private String numero;
+    private String bairro;
 
-        private String numero;
+    @ManyToOne
+    @JoinColumn(name = "cidade_id")
+    private Cidade cidade;
 
-        private String bairro;
+    private String cep;
 
-        @ManyToOne
-        @JoinColumn(name = "cliente_id")
-        private Cliente cliente;
-
-        @ManyToOne
-        @JoinColumn(name = "cidade_id")
-        private Cidade cidade;
-
-        private String cep;
-
-    }
+}

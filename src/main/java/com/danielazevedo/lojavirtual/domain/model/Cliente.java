@@ -33,8 +33,8 @@ public class Cliente {
     @Column(nullable = false)
     private String cpf;
 
-    @OneToMany(mappedBy = "cliente")
-    private List<Endereco> endereco = new ArrayList<>();
+    @Embedded
+    private Endereco endereco;
 
     @Column(nullable = false, name = "datanascimento")
     @JsonFormat(pattern = "yyyy-MM-dd")
