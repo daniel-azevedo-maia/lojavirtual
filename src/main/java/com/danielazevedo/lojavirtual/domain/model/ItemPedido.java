@@ -1,5 +1,6 @@
 package com.danielazevedo.lojavirtual.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,6 +20,7 @@ public class ItemPedido {
     @JoinColumn(name = "produto_id")
     private Produto produto;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "pedido_id")
     private Pedido pedido;

@@ -39,7 +39,22 @@ public class ClienteService {
 
     public Cliente cadastrar(Cliente cliente) {
 
+
+        System.out.println(" ------------- DADOS DO CLIENTE ----------------------");
+        System.out.println("Nome: " + cliente.getNome());
+        System.out.println("RG: " + cliente.getRg());
+        System.out.println("CPF: " + cliente.getCpf());
+        System.out.println("Rua: " + cliente.getEndereco().getLogradouro());
+        System.out.println("Número: " + cliente.getEndereco().getNumero());
+        System.out.println("Bairro: " + cliente.getEndereco().getBairro());
+        System.out.println("CEP: " + cliente.getEndereco().getCep());
+        System.out.println("ID da cidade: " + cliente.getEndereco().getCidade().getId());
+        System.out.println("Data de cadastro: " + cliente.getDataCadastro());
+        System.out.println("Data de nascimento: " + cliente.getDataNascimento());
+        System.out.println(" ----------------------------------------------");
+
         Long cidadeId = cliente.getEndereco().getCidade().getId();
+
         Cidade cidade = cidadeRepository.findById(cidadeId)
                 .orElseThrow(() -> new EntityNotFoundException("Cidade não encontrada"));
         cliente.getEndereco().setCidade(cidade);
