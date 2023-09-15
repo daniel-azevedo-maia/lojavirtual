@@ -35,7 +35,6 @@ public class Cliente {
     @Column(nullable = false)
     private String cpf;
 
-    @JsonIgnore
     @Embedded
     private Endereco endereco;
 
@@ -43,6 +42,7 @@ public class Cliente {
     @JsonFormat(pattern="dd/MM/yyyy")
     private Date dataNascimento;
 
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime dataCadastro;
 
 }

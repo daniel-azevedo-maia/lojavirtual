@@ -45,8 +45,6 @@ public class ClienteController {
 
         cliente.setDataCadastro(LocalDateTime.now());
 
-        // Implementar a lógica para setar os dados.
-
         Cliente clienteSalvo = clienteService.cadastrar(cliente);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(clienteSalvo);
