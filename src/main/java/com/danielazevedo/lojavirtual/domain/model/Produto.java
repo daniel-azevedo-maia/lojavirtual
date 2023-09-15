@@ -23,5 +23,9 @@ public class Produto {
     @Column(nullable = false)
     private BigDecimal preco;
 
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
 
 }
